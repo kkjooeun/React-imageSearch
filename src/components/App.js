@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import unsplash from '../api/unsplash';
+import Hearder from './Header';
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
 
@@ -19,6 +20,7 @@ const App = () => {
 
 	return(
 		<div className='ui container'>
+			<Hearder/>
 			<SearchBar onSubmit={onSubmit}/>
 			Find : {images.length}
 			<ImageList images={images}/>

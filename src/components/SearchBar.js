@@ -18,7 +18,6 @@ export default class SearchBar extends React.Component {
 		return (
 			<div>
 				<form className='ui form' onSubmit={this.onFormSubmit}>
-					<label>검색어를 입력하세요.</label>
   				<input 
 						type="text"
 						value={this.state.query}
