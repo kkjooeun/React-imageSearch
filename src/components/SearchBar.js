@@ -4,9 +4,9 @@ export default class SearchBar extends React.Component {
 	render() {
 		return (
 			<div>
-				<form>
+				<form className='ui form'>
 					<label>검색어를 입력하세요.</label>
-					<input/>
+  				<input type="text"/>
 				</form>
 			</div>
 		)
