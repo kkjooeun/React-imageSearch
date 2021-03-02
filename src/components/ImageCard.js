@@ -6,7 +6,7 @@ const ImageCard = ({imageValue}) => {
 		<div class="column">
 			<div class="ui fluid card">
 				<div class="image">
-					<img src={imageValue.urls.regular}/>
+					<img src={imageValue.urls.regular} alt={imageValue.alt_description}/>
 				</div>
 				<div class="content">
 					<a class="header">{imageValue.user.name}</a>

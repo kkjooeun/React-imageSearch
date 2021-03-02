@@ -14,7 +14,6 @@ const App = () => {
 				query
 			}
 		});
-		console.log(res);
 		setImages(res.data.results);
 	}
 
