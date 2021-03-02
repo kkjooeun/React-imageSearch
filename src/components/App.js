@@ -5,19 +5,18 @@ import SearchBar from './SearchBar';
 const App = () => {
 	const [images, setImages] = useState([]);
 
-	const onSubmit = (query) => {
+	const onSubmit = async (query) => {
 		const url = 'https://api.unsplash.com/search/photos'
-		axios.get(url, {
+		const res = await axios.get(url, {
 			params : {
 				query
 			},
 			headers: {
 				Authorization : 'Client-ID 12fNUeS0axgg8SEeJpBoJpOSLF_uNk-JSwKmWSYaBS8'
 			}
-		}).then((res) => {
-			console.log(res);
-			setImages(res.data.results);
 		});
+		console.log(res);
+		setImages(res.data.results);
 	}
 
 	return(
