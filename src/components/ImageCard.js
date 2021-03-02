@@ -6,10 +6,10 @@ const ImageCard = ({imageValue}) => {
 		<div class="column">
 			<div class="ui fluid card">
 				<div class="image">
-					<img src="/images/avatar/large/daniel.jpg"/>
+					<img src={imageValue.urls.regular}/>
 				</div>
 				<div class="content">
-					<a class="header">Daniel Louise</a>
+					<a class="header">{imageValue.user.name}</a>
 				</div>
 			</div>
 		</div>
