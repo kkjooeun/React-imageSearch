@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 
-const ImageCard = ({imageValue}) => {
-	console.log(imageValue);
+const ImageCard = ({image}) => {
+	const { urls, alt_description} = image
+	const [span, setSpan] = useState(0);
+	const img = useRef(null);
+
+	useEffect(()=>{
+		//console.log("함수 컴포넌트 마운트 완료");
+		img.current.addEventListener('load', findSpan);
+	},[]); //빈배열의 경우 마운트시, 마운트해제시 실행
+
+	const findSpan = () => {
+		//console.log(img.current.clientHeight);
+		const height = img.current.clientHeight;
+		const span = Math.ceil(height/10);
+		setSpan(span);
+	}	
+
 	return (
-		<div class="column">
-			<div class="ui fluid card">
-				<div class="image">
-					<img src={imageValue.urls.regular} alt={imageValue.alt_description}/>
-				</div>
-				<div class="content">
-					<a class="header">{imageValue.user.name}</a>
-				</div>
-			</div>
-		</div>
+		<img style={{gridRowEnd:`span ${span}`}} ref={img} src={urls.regular} alt={alt_description}/>
 	)
 }
 
